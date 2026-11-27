@@ -8,7 +8,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <AssemblyName>SLW3D.Controller</AssemblyName>
     <RootNamespace>SLW3D.Controller</RootNamespace>
-    <Version>1.0.2</Version>
+    <Version>1.0.3</Version>
     <Product>Streamlined Desktop Overlay for Windows (SLW3D)</Product>
     <Company>Vkng137</Company>
     <Description>SLW3D tray controller, global hotkeys, and game mode watcher.</Description>

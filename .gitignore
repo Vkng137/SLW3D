@@ -20,6 +20,7 @@ config/controller.json
 # User-imported background images (local machine media)
 assets/backgrounds/*
 !assets/backgrounds/.gitkeep
+!assets/backgrounds/CityScape.png
 
 # IDE / OS noise
 .vs/

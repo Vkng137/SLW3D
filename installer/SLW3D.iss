@@ -29,6 +29,7 @@ RestartApplications=no
 Name: "english"; MessagesFile: "compiler:Default.isl"
 
 [Tasks]
+Name: "autostart"; Description: "Start SLW 3D automatically when I sign in to Windows"; GroupDescription: "Startup:"
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [InstallDelete]
@@ -48,6 +49,7 @@ Source: "..\dist\stage\shell\web\*"; DestDir: "{app}\shell\web"; Flags: ignoreve
 Source: "..\dist\stage\assets\slw3d.ico"; DestDir: "{app}\assets"; Flags: ignoreversion
 Source: "..\dist\stage\assets\slw3d.png"; DestDir: "{app}\assets"; Flags: ignoreversion
 Source: "..\dist\stage\assets\backgrounds\.gitkeep"; DestDir: "{app}\assets\backgrounds"; Flags: ignoreversion
+Source: "..\dist\stage\assets\backgrounds\CityScape.png"; DestDir: "{app}\assets\backgrounds"; Flags: ignoreversion
 Source: "..\dist\stage\config\controller.example.json"; DestDir: "{app}\config"; Flags: ignoreversion
 Source: "..\dist\stage\config\apps.json"; DestDir: "{app}\config"; Flags: onlyifdoesntexist
 Source: "..\dist\stage\config\shell.json"; DestDir: "{app}\config"; Flags: onlyifdoesntexist
@@ -59,6 +61,7 @@ Name: "{group}\Uninstall SLW 3D"; Filename: "{uninstallexe}"
 Name: "{autodesktop}\SLW 3D"; Filename: "{app}\bin\controller\SLW3D.Controller.exe"; WorkingDir: "{app}\bin\controller"; IconFilename: "{app}\assets\slw3d.ico"; Tasks: desktopicon
 
 [Run]
+Filename: "{app}\bin\controller\SLW3D.Controller.exe"; Parameters: "--enable-autostart"; WorkingDir: "{app}\bin\controller"; Flags: runhidden waituntilterminated; Tasks: autostart
 Filename: "{app}\bin\controller\SLW3D.Controller.exe"; WorkingDir: "{app}\bin\controller"; Description: "{cm:LaunchProgram,SLW 3D}"; Flags: nowait postinstall skipifsilent
 
 [UninstallRun]

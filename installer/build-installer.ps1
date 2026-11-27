@@ -55,6 +55,7 @@ New-Item -ItemType Directory -Path (Join-Path $stageDir 'assets\backgrounds') -F
 Copy-Item (Join-Path $root 'assets\slw3d.ico') (Join-Path $stageDir 'assets\slw3d.ico')
 Copy-Item (Join-Path $root 'assets\slw3d.png') (Join-Path $stageDir 'assets\slw3d.png')
 Copy-Item (Join-Path $root 'assets\backgrounds\.gitkeep') (Join-Path $stageDir 'assets\backgrounds\.gitkeep')
+Copy-Item (Join-Path $root 'assets\backgrounds\CityScape.png') (Join-Path $stageDir 'assets\backgrounds\CityScape.png')
 
 New-Item -ItemType Directory -Path (Join-Path $stageDir 'config') -Force | Out-Null
 foreach ($cfg in @('apps.json', 'shell.json', 'themes.json', 'controller.example.json')) {

@@ -3,17 +3,43 @@ namespace SLW3D.Controller;
 static class Program
 {
     [STAThread]
-    static void Main()
+    static int Main(string[] args)
     {
+        bool enableAutostart = args.Contains("--enable-autostart", StringComparer.OrdinalIgnoreCase);
+        bool disableAutostart = args.Contains("--disable-autostart", StringComparer.OrdinalIgnoreCase);
+
         string root;
         try { root = Paths.FindRoot(); }
         catch (Exception ex)
         {
-            MessageBox.Show(ex.Message, "SLW3D", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            return;
+            if (!enableAutostart && !disableAutostart)
+                MessageBox.Show(ex.Message, "SLW3D", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return 1;
         }
 
         Log.Init(Path.Combine(root, "logs", "controller.log"));
+
+        if (enableAutostart || disableAutostart)
+        {
+            try
+            {
+                if (enableAutostart)
+                {
+                    string exe = Environment.ProcessPath ?? Path.Combine(root, "bin", "controller", "SLW3D.Controller.exe");
+                    Autostart.Enable(exe);
+                }
+                else if (Autostart.IsOn())
+                {
+                    Autostart.Disable();
+                }
+                return 0;
+            }
+            catch (Exception ex)
+            {
+                Log.Write("Autostart CLI command failed: " + ex);
+                return 1;
+            }
+        }
 
         using var single = new Mutex(true, "SLW3D.Controller.Single", out bool first);
         if (!first)
@@ -27,7 +53,7 @@ static class Program
                     "SLW3D — Another Copy Is Running",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
-                return;
+                return 0;
             }
             try
             {
@@ -39,7 +65,7 @@ static class Program
             {
                 Log.Write("Controller already running; second copy exits.");
             }
-            return;
+            return 0;
         }
 
         Log.Write("==== Controller starting ====");
@@ -52,6 +78,7 @@ static class Program
 
         Application.Run(new TrayApp(root));
         Log.Write("==== Controller stopped ====");
+        return 0;
     }
 
     /// <summary>Returns the folder of another running SLW3D.Controller if it lives in a different install directory.</summary>

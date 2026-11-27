@@ -85,7 +85,7 @@ Built with .NET 10, WinForms + WebView2, and Three.js for Windows 10 and Windows
   - **Windows 11:** Right-click the taskbar → **Taskbar settings** → **Taskbar behaviors** → check **Automatically hide the taskbar**.
   - **Windows 10:** Right-click the taskbar → **Taskbar settings** → turn on **Automatically hide the taskbar in desktop mode**.
   *(You can still access Start and Search anytime from the bottom dock bar or by moving your mouse to the bottom edge.)*
-- **Start at Login:** Right-click the **SLW3D** icon in the Windows system tray (bottom-right notification area) and enable **Start at login** if you want it to launch automatically when you sign in.
+- **Start at Login:** Checked by default in the installer (**Start SLW 3D automatically when I sign in to Windows**). You can also toggle **Start at login** anytime by right-clicking the **SLW3D** icon in the Windows system tray (bottom-right notification area).
 
 ---
 
@@ -128,7 +128,7 @@ dotnet run --project tests\SLW3D.Tests.csproj -c Release
 .\build.ps1
 
 # Build the Windows .exe installer + SHA256SUMS.txt (requires Inno Setup 6)
-.\installer\build-installer.ps1 -Version 1.0.2
+.\installer\build-installer.ps1 -Version 1.0.3
 ```
 
 ## License

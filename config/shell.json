@@ -11,7 +11,7 @@
   "core_brightness": 0.5,
   "attach_layered": false,
   "background": {
-    "image": "",
+    "image": "CityScape.png",
     "dim": 0.4,
     "fit": "fill"
   },
