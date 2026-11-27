@@ -1,6 +1,6 @@
 using System.Diagnostics;
 
-namespace Desktop3D.Controller;
+namespace SLW3D.Controller;
 
 /// <summary>Starts, stops and watches the 3D shell. Restarts it once after a crash;
 /// a second crash within 5 minutes leaves stock Windows up.</summary>

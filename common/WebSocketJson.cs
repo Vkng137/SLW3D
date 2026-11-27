@@ -2,12 +2,12 @@ using System.Net.WebSockets;
 using System.Text;
 using System.Text.Json.Nodes;
 
-namespace Desktop3D;
+namespace SLW3D;
 
 /// <summary>Reads a complete text WebSocket JSON object across one or more frames, with a size cap.</summary>
 public static class WebSocketJson
 {
-    public const string TokenHeader = "X-Desktop3D-Token";
+    public const string TokenHeader = "X-SLW3D-Token";
 
     /// <summary>Returns null when the peer closed or exceeded <paramref name="maxBytes"/>;
     /// returns an empty JsonObject when a text message was not valid JSON.</summary>

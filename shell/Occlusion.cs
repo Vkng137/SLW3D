@@ -1,7 +1,7 @@
 using System.Diagnostics;
-using static Desktop3D.Shell.Native;
+using static SLW3D.Shell.Native;
 
-namespace Desktop3D.Shell;
+namespace SLW3D.Shell;
 
 /// <summary>Is the primary monitor's desktop fully covered by a maximized or full-screen app?
 /// If so the shell stops rendering (near-zero GPU) until it is visible again.</summary>

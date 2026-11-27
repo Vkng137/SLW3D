@@ -122,13 +122,13 @@ Requires the .NET 10 SDK (`net10.0-windows`):
 
 ```powershell
 # Run tests
-dotnet run --project tests\Desktop3D.Tests.csproj -c Release
+dotnet run --project tests\SLW3D.Tests.csproj -c Release
 
 # Build portable binaries into .\bin
 .\build.ps1
 
 # Build the Windows .exe installer + SHA256SUMS.txt (requires Inno Setup 6)
-.\installer\build-installer.ps1 -Version 1.0.0
+.\installer\build-installer.ps1 -Version 1.0.2
 ```
 
 ## License

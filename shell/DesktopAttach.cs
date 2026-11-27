@@ -1,6 +1,6 @@
-using static Desktop3D.Shell.Native;
+using static SLW3D.Shell.Native;
 
-namespace Desktop3D.Shell;
+namespace SLW3D.Shell;
 
 /// <summary>
 /// Puts the shell window on the desktop layer: below every app window, above the desktop icons.

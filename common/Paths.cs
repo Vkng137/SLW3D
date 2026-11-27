@@ -1,4 +1,4 @@
-namespace Desktop3D;
+namespace SLW3D;
 
 public static class Paths
 {
@@ -16,8 +16,8 @@ public static class Paths
         throw new DirectoryNotFoundException("Project root (PROJECT.md + config) not found above " + AppContext.BaseDirectory);
     }
 
-    public const string ShellExeName = "Desktop3D.Shell";
-    public const string ShellQuitEvent = "Desktop3D.Shell.Quit";
-    public const string ControllerWakeEvent = "Desktop3D.Controller.Wake";
-    public const string ControllerQuitEvent = "Desktop3D.Controller.Quit";
+    public const string ShellExeName = "SLW3D.Shell";
+    public const string ShellQuitEvent = "SLW3D.Shell.Quit";
+    public const string ControllerWakeEvent = "SLW3D.Controller.Wake";
+    public const string ControllerQuitEvent = "SLW3D.Controller.Quit";
 }

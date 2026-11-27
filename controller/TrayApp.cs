@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 using System.Text.Json.Nodes;
 using Microsoft.Win32;
 
-namespace Desktop3D.Controller;
+namespace SLW3D.Controller;
 
 /// <summary>Lives in the notification area. Owns the mode controller, hotkeys, local shell link, and game watcher.</summary>
 sealed class TrayApp : ApplicationContext
@@ -242,7 +242,7 @@ sealed class TrayApp : ApplicationContext
     {
         try
         {
-            string icoPath = Path.Combine(root, "assets", "desktop3d.ico");
+            string icoPath = Path.Combine(root, "assets", "slw3d.ico");
             if (File.Exists(icoPath))
                 return new Icon(icoPath, 32, 32);
         }

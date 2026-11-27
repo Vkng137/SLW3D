@@ -1,6 +1,6 @@
 using System.Text.Json.Nodes;
 
-namespace Desktop3D;
+namespace SLW3D;
 
 /// <summary>Small reads and writes of config\shell.json shared by the controller and the shell.</summary>
 public static class ShellConfig

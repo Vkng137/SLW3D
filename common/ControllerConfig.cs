@@ -1,7 +1,7 @@
 using System.Security.Cryptography;
 using System.Text.Json.Nodes;
 
-namespace Desktop3D;
+namespace SLW3D;
 
 /// <summary>config\controller.json: ports and the shared token that local connections must present.</summary>
 public static class ControllerConfig

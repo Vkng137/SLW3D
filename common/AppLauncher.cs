@@ -2,7 +2,7 @@ using System.Collections.Concurrent;
 using System.Diagnostics;
 using System.Text.Json.Nodes;
 
-namespace Desktop3D;
+namespace SLW3D;
 
 /// <summary>Launches only apps listed in config\apps.json, by name. The page can never run anything else.</summary>
 public static class AppLauncher

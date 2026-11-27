@@ -6,13 +6,13 @@
     <UseWindowsForms>true</UseWindowsForms>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <AssemblyName>Desktop3D.Controller</AssemblyName>
-    <RootNamespace>Desktop3D.Controller</RootNamespace>
-    <Version>1.0.1</Version>
+    <AssemblyName>SLW3D.Controller</AssemblyName>
+    <RootNamespace>SLW3D.Controller</RootNamespace>
+    <Version>1.0.2</Version>
     <Product>Streamlined Desktop Overlay for Windows (SLW3D)</Product>
     <Company>Vkng137</Company>
     <Description>SLW3D tray controller, global hotkeys, and game mode watcher.</Description>
-    <ApplicationIcon>..\assets\desktop3d.ico</ApplicationIcon>
+    <ApplicationIcon>..\assets\slw3d.ico</ApplicationIcon>
     <ApplicationHighDpiMode>PerMonitorV2</ApplicationHighDpiMode>
     <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
     <GenerateDocumentationFile>false</GenerateDocumentationFile>
@@ -20,7 +20,7 @@
 
   <ItemGroup>
     <Compile Include="..\common\*.cs" Link="common\%(Filename)%(Extension)" />
-    <InternalsVisibleTo Include="Desktop3D.Tests" />
+    <InternalsVisibleTo Include="SLW3D.Tests" />
   </ItemGroup>
 
 </Project>

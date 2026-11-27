@@ -1,4 +1,4 @@
-// Glass desktop UI. Talks to the host (Desktop3D.Shell) through WebView2 messages:
+// Glass desktop UI. Talks to the host (SLW3D.Shell) through WebView2 messages:
 //   host -> page: config, theme, layout, status, telemetry, toast
 //   page -> host: ready, launch {name}, start, search, log {text}
 import { createCore } from './core3d.js';
@@ -1179,7 +1179,7 @@ const BG_FITS = [
   { key: 'center', label: 'Center' },
 ];
 const bgs = { items: [], active: null, dim: 0.45, fit: 'fill', shown: '' };
-const mediaUrl = (file) => `https://media.desktop3d.local/${encodeURIComponent(file)}`;
+const mediaUrl = (file) => `https://media.slw3d.local/${encodeURIComponent(file)}`;
 
 function applyBgFit(fit) {
   const mode = BG_FITS.some((f) => f.key === fit) ? fit : 'fill';

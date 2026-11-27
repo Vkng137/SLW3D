@@ -1,4 +1,4 @@
-namespace Desktop3D.Controller;
+namespace SLW3D.Controller;
 
 enum Mode { Stock, Full, ManualControl, GameMode }
 

@@ -5,9 +5,9 @@ using System.Net.Sockets;
 using System.Net.WebSockets;
 using System.Text;
 using System.Text.Json.Nodes;
-using Desktop3D;
-using Desktop3D.Controller;
-using ShellAsm::Desktop3D.Shell;
+using SLW3D;
+using SLW3D.Controller;
+using ShellAsm::SLW3D.Shell;
 
 int passed = 0, failed = 0;
 
@@ -27,13 +27,13 @@ void Assert(bool cond, string msg) { if (!cond) throw new Exception(msg); }
 
 string MakeTempRoot()
 {
-    string dir = Path.Combine(Path.GetTempPath(), "Desktop3D-Tests-" + Guid.NewGuid().ToString("N"));
+    string dir = Path.Combine(Path.GetTempPath(), "SLW3D-Tests-" + Guid.NewGuid().ToString("N"));
     Directory.CreateDirectory(Path.Combine(dir, "config"));
     Directory.CreateDirectory(Path.Combine(dir, "assets", "backgrounds"));
     return dir;
 }
 
-Console.WriteLine("Running Desktop3D C# tests...");
+Console.WriteLine("Running SLW3D C# tests...");
 
 Run("ControllerConfig.EnsureToken generates token and preserves valid token", () =>
 {

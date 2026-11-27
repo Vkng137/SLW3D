@@ -1,4 +1,4 @@
-namespace Desktop3D.Shell;
+namespace SLW3D.Shell;
 
 static class Program
 {
@@ -7,10 +7,10 @@ static class Program
     {
         string root;
         try { root = Paths.FindRoot(); }
-        catch (Exception ex) { MessageBox.Show(ex.Message, "3D desktop"); return; }
+        catch (Exception ex) { MessageBox.Show(ex.Message, "SLW3D"); return; }
 
         Log.Init(Path.Combine(root, "logs", "shell.log"));
-        using var single = new Mutex(true, "Desktop3D.Shell.Single", out bool first);
+        using var single = new Mutex(true, "SLW3D.Shell.Single", out bool first);
         if (!first) { Log.Write("Shell already running; second copy exits."); return; }
 
         Log.Write("==== Shell starting ====");

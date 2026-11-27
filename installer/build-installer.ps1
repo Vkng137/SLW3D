@@ -13,19 +13,15 @@ $env:DOTNET_SKIP_FIRST_TIME_EXPERIENCE = '1'
 $cleanVersion = $Version.TrimStart('v', 'V')
 
 $localDotnet = Join-Path $root '.tools\dotnet\dotnet.exe'
-$sharedDotnet = 'D:\Windows 3d AI\.tools\dotnet\dotnet.exe'
 if (Test-Path $localDotnet) {
     $dotnet = $localDotnet
     $env:NUGET_PACKAGES = Join-Path $root '.tools\nuget'
-} elseif (Test-Path $sharedDotnet) {
-    $dotnet = $sharedDotnet
-    $env:NUGET_PACKAGES = 'D:\Windows 3d AI\.tools\nuget'
 } else {
     $dotnet = 'dotnet'
 }
 
 Write-Host "Running unit tests ..."
-& $dotnet run --project (Join-Path $root 'tests\Desktop3D.Tests.csproj') -c Release --nologo
+& $dotnet run --project (Join-Path $root 'tests\SLW3D.Tests.csproj') -c Release --nologo
 if ($LASTEXITCODE -ne 0) { throw "Unit tests failed" }
 
 $distDir = Join-Path $root 'dist'
@@ -56,8 +52,8 @@ Copy-Item (Join-Path $root 'PROJECT.md') (Join-Path $stageDir 'PROJECT.md')
 Copy-Item (Join-Path $root 'shell\web') (Join-Path $stageDir 'shell\web') -Recurse
 
 New-Item -ItemType Directory -Path (Join-Path $stageDir 'assets\backgrounds') -Force | Out-Null
-Copy-Item (Join-Path $root 'assets\desktop3d.ico') (Join-Path $stageDir 'assets\desktop3d.ico')
-Copy-Item (Join-Path $root 'assets\desktop3d.png') (Join-Path $stageDir 'assets\desktop3d.png')
+Copy-Item (Join-Path $root 'assets\slw3d.ico') (Join-Path $stageDir 'assets\slw3d.ico')
+Copy-Item (Join-Path $root 'assets\slw3d.png') (Join-Path $stageDir 'assets\slw3d.png')
 Copy-Item (Join-Path $root 'assets\backgrounds\.gitkeep') (Join-Path $stageDir 'assets\backgrounds\.gitkeep')
 
 New-Item -ItemType Directory -Path (Join-Path $stageDir 'config') -Force | Out-Null

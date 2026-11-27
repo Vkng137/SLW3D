@@ -1,6 +1,6 @@
 using System.Runtime.InteropServices;
 
-namespace Desktop3D.Controller;
+namespace SLW3D.Controller;
 
 /// <summary>Message-only window that owns the global hotkeys.</summary>
 sealed class HotkeyWindow : NativeWindow, IDisposable

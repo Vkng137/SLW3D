@@ -1,7 +1,7 @@
 using System.Diagnostics;
 using System.Text.Json.Nodes;
 
-namespace Desktop3D.Controller;
+namespace SLW3D.Controller;
 
 /// <summary>Automatic Game Mode. Every 4 s: is one of the games in controller.json "game_processes"
 /// running? If so (and we're in Full mode), switch to Game Mode so everything this project runs shuts

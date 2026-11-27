@@ -1,6 +1,6 @@
 using System.Text.Json.Nodes;
 
-namespace Desktop3D;
+namespace SLW3D;
 
 /// <summary>Reads the theme list and switches the active theme in config\themes.json.
 /// The 3D shell watches the file and crossfades to the new theme.</summary>

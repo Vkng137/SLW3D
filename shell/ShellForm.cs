@@ -4,14 +4,14 @@ using Microsoft.Web.WebView2.Core;
 using Microsoft.Web.WebView2.WinForms;
 using Microsoft.Win32;
 
-namespace Desktop3D.Shell;
+namespace SLW3D.Shell;
 
 /// <summary>The 3D desktop window: a WebView2 page (Three.js + glass UI) attached to the desktop layer.</summary>
 sealed class ShellForm : Form
 {
-    const string HostName = "desktop3d.local";
+    const string HostName = "slw3d.local";
     const string PageUrl = "https://" + HostName + "/index.html";
-    const string MediaHost = "media.desktop3d.local";
+    const string MediaHost = "media.slw3d.local";
 
     readonly string root, webDir, configDir;
     readonly bool debug;
@@ -38,7 +38,7 @@ sealed class ShellForm : Form
         webDir = Path.Combine(root, "shell", "web");
         configDir = Path.Combine(root, "config");
 
-        Text = "Desktop3D Shell";
+        Text = "SLW3D Shell";
         AutoScaleMode = AutoScaleMode.None;
         FormBorderStyle = FormBorderStyle.None;
         ShowInTaskbar = false;
@@ -135,7 +135,7 @@ sealed class ShellForm : Form
 
     async Task InitWebAsync()
     {
-        string dataDir = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Desktop3D", "WebView2");
+        string dataDir = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "SLW3D", "WebView2");
         // Keep the embedded browser quiet: no background updates, sync, pings or reputation lookups.
         var options = new CoreWebView2EnvironmentOptions(
             "--disable-background-networking --disable-component-update --disable-sync --no-pings --disable-domain-reliability");

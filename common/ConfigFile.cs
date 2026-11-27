@@ -1,7 +1,7 @@
 using System.Text.Json;
 using System.Text.Json.Nodes;
 
-namespace Desktop3D;
+namespace SLW3D;
 
 /// <summary>Thread- and cross-process-safe JSON config reads and atomic writes.</summary>
 public static class ConfigFile
@@ -10,7 +10,7 @@ public static class ConfigFile
 
     static Mutex AcquireLock()
     {
-        var m = new Mutex(false, "Local\\Desktop3D.ConfigLock");
+        var m = new Mutex(false, "Local\\SLW3D.ConfigLock");
         try { m.WaitOne(TimeSpan.FromSeconds(5)); }
         catch (AbandonedMutexException) { /* previous owner exited while holding it */ }
         return m;

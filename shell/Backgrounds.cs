@@ -2,10 +2,10 @@ using System.Text.Json;
 using System.Text.Json.Nodes;
 using Microsoft.Win32;
 
-namespace Desktop3D.Shell;
+namespace SLW3D.Shell;
 
 /// <summary>Background pictures. Chosen pictures are COPIED into assets\backgrounds (the originals are never
-/// touched), served to the page from https://media.desktop3d.local/. The choice and the dim level live in
+/// touched), served to the page from https://media.slw3d.local/. The choice and the dim level live in
 /// config\shell.json "background": {"image": "&lt;file&gt;" or null, "dim": 0.0-0.9}.</summary>
 static class Backgrounds
 {

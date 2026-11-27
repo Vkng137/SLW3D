@@ -1,6 +1,6 @@
 using System.Runtime.InteropServices;
 
-namespace Desktop3D.Shell;
+namespace SLW3D.Shell;
 
 /// <summary>Live readings for the system panel using standard Windows APIs only:
 /// CPU load (split into P-cores/E-cores on hybrid CPUs, or overall CPU otherwise), RAM, and live ready drives.</summary>

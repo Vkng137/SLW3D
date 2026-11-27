@@ -6,13 +6,13 @@
     <UseWindowsForms>true</UseWindowsForms>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <AssemblyName>Desktop3D.Shell</AssemblyName>
-    <RootNamespace>Desktop3D.Shell</RootNamespace>
-    <Version>1.0.1</Version>
+    <AssemblyName>SLW3D.Shell</AssemblyName>
+    <RootNamespace>SLW3D.Shell</RootNamespace>
+    <Version>1.0.2</Version>
     <Product>Streamlined Desktop Overlay for Windows (SLW3D)</Product>
     <Company>Vkng137</Company>
     <Description>SLW3D WebView2 and Three.js desktop shell overlay.</Description>
-    <ApplicationIcon>..\assets\desktop3d.ico</ApplicationIcon>
+    <ApplicationIcon>..\assets\slw3d.ico</ApplicationIcon>
     <ApplicationHighDpiMode>PerMonitorV2</ApplicationHighDpiMode>
     <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
     <!-- WebView2 package also references its WPF control; harmless version note in a WinForms app. -->
@@ -27,7 +27,7 @@
     <Compile Include="..\common\*.cs" Link="common\%(Filename)%(Extension)" />
     <Compile Remove="web\**" />
     <None Remove="web\**" />
-    <InternalsVisibleTo Include="Desktop3D.Tests" />
+    <InternalsVisibleTo Include="SLW3D.Tests" />
   </ItemGroup>
 
 </Project>

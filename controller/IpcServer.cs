@@ -3,7 +3,7 @@ using System.Net.WebSockets;
 using System.Text;
 using System.Text.Json.Nodes;
 
-namespace Desktop3D.Controller;
+namespace SLW3D.Controller;
 
 /// <summary>The controller's local link (ws://127.0.0.1:ipc_port). Accepts local connections from the 3D shell
 /// that present the token from controller.json and send no Origin header.</summary>
@@ -68,7 +68,7 @@ sealed class IpcServer : IDisposable
             try { ctx = await listener.GetContextAsync(); }
             catch { break; }
             var req = ctx.Request;
-            // Accept token via X-Desktop3D-Token header (preferred) or ?token= query parameter.
+            // Accept token via X-SLW3D-Token header (preferred) or ?token= query parameter.
             string? givenToken = req.Headers[WebSocketJson.TokenHeader] ?? req.QueryString["token"];
             bool ok = req.IsWebSocketRequest
                       && IPAddress.IsLoopback(req.RemoteEndPoint.Address)

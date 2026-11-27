@@ -2,7 +2,7 @@ using System.Net.WebSockets;
 using System.Text;
 using System.Text.Json.Nodes;
 
-namespace Desktop3D.Shell;
+namespace SLW3D.Shell;
 
 /// <summary>The shell's local loopback connection to the tray controller (for Game Mode button, etc.). Reconnects every 5 s.</summary>
 sealed class ControllerLink : IDisposable

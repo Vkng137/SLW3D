@@ -2,7 +2,7 @@ using System.Diagnostics;
 using System.Security;
 using System.Security.Principal;
 
-namespace Desktop3D.Controller;
+namespace SLW3D.Controller;
 
 /// <summary>"Start at login": a per-user Task Scheduler task that starts the controller 10 s after
 /// logon, with normal (not admin) rights and normal priority. Normal rights on purpose: apps opened
@@ -33,7 +33,7 @@ static class Autostart
               <Actions Context="Author"><Exec><Command>{SecurityElement.Escape(controllerExe)}</Command><WorkingDirectory>{SecurityElement.Escape(Path.GetDirectoryName(controllerExe))}</WorkingDirectory></Exec></Actions>
             </Task>
             """;
-        string tmp = Path.Combine(Path.GetTempPath(), "Desktop3D-autostart.xml");
+        string tmp = Path.Combine(Path.GetTempPath(), "SLW3D-autostart.xml");
         File.WriteAllText(tmp, xml, System.Text.Encoding.Unicode);
         try
         {

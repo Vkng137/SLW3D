@@ -1,7 +1,7 @@
 using System.Runtime.InteropServices;
 using System.Text;
 
-namespace Desktop3D.Shell;
+namespace SLW3D.Shell;
 
 static class Native
 {

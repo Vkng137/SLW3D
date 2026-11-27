@@ -1,6 +1,6 @@
 using System.Text.RegularExpressions;
 
-namespace Desktop3D.Shell;
+namespace SLW3D.Shell;
 
 /// <summary>Windows' own "All apps" list (shell:AppsFolder): desktop programs, Store apps and Steam items.
 /// Every entry launches the same way, through shell:AppsFolder\&lt;id&gt; (or its own steam:// link).</summary>

@@ -3,7 +3,7 @@ using System.Text.Encodings.Web;
 using System.Text.Json;
 using System.Text.Json.Nodes;
 
-namespace Desktop3D.Shell;
+namespace SLW3D.Shell;
 
 /// <summary>Adds and removes tiles in config\apps.json. Keeps one app per line, and saves the
 /// previous version as apps.json.bak before every change.</summary>

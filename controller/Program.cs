@@ -1,4 +1,4 @@
-namespace Desktop3D.Controller;
+namespace SLW3D.Controller;
 
 static class Program
 {
@@ -15,7 +15,7 @@ static class Program
 
         Log.Init(Path.Combine(root, "logs", "controller.log"));
 
-        using var single = new Mutex(true, "Desktop3D.Controller.Single", out bool first);
+        using var single = new Mutex(true, "SLW3D.Controller.Single", out bool first);
         if (!first)
         {
             string? otherDir = FindOtherControllerDir();
@@ -54,12 +54,12 @@ static class Program
         Log.Write("==== Controller stopped ====");
     }
 
-    /// <summary>Returns the folder of another running Desktop3D.Controller if it lives in a different install directory.</summary>
+    /// <summary>Returns the folder of another running SLW3D.Controller if it lives in a different install directory.</summary>
     static string? FindOtherControllerDir()
     {
         string myPath = Path.GetFullPath(Environment.ProcessPath ?? "");
         int myPid = Environment.ProcessId;
-        foreach (var p in System.Diagnostics.Process.GetProcessesByName("Desktop3D.Controller"))
+        foreach (var p in System.Diagnostics.Process.GetProcessesByName("SLW3D.Controller"))
         {
             try
             {

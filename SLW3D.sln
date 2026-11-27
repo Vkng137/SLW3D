@@ -1,4 +1,4 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
@@ -13,7 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shell", "shell\Shell.csproj
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{0AB3BF05-4346-4AA6-1389-037BE0695223}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Desktop3D.Tests", "tests\Desktop3D.Tests.csproj", "{DD2C5096-E782-4ADD-9401-5EABD30D2E52}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SLW3D.Tests", "tests\SLW3D.Tests.csproj", "{DD2C5096-E782-4ADD-9401-5EABD30D2E52}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

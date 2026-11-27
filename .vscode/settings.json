@@ -1,4 +1,4 @@
 {
-  "dotnet.defaultSolution": "Desktop3D.sln",
+  "dotnet.defaultSolution": "SLW3D.sln",
   "dotnet.server.useOmnisharp": false
 }

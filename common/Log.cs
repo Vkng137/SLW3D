@@ -1,4 +1,4 @@
-namespace Desktop3D;
+namespace SLW3D;
 
 /// <summary>Tiny thread-safe file logger with timestamps. Rolls to .old at ~2 MB.</summary>
 public static class Log
