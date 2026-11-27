@@ -3,6 +3,7 @@
 **A streamlined Windows 3D overlay to customize your Windows desktop to work for you — instead of Windows telling you how it should look.**
 
 [![Download Latest Release](https://img.shields.io/badge/Download-Latest%20Installer-f59e0b?style=for-the-badge&logo=windows11&logoColor=white)](https://github.com/Vkng137/SLW3D/releases/latest)
+[![Watch Video Walkthrough](https://img.shields.io/badge/Watch-Video%20Walkthrough-ff0000?style=for-the-badge&logo=youtube&logoColor=white)](https://youtu.be/pN_z3yp7AV0)
 [![Support SLW3D on Ko-fi](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-Support%20SLW3D-72a4f2?style=for-the-badge&logo=ko-fi&logoColor=white)](https://ko-fi.com/vkng137)
 
 > *"I built this because I got bored and tired of the old Windows desktop and having to search for things that I commonly use. I wanted a streamlined version with a little more 3D effect, customized around what the user actually uses instead of what Windows decides. I hope you enjoy it as much as I do."* — **Vkng137**
@@ -33,7 +34,10 @@ Built with .NET 10, WinForms + WebView2, and Three.js for Windows 10 and Windows
 ---
 
 ## Video Walkthrough
-- **Basic Use of SLW3D** — *(YouTube link coming soon — covers every click, deck, theme, Game Mode, and tip in action)*
+
+[![Watch the SLW3D Showcase on YouTube](docs/screenshots/slw3d-video-thumb.jpg)](https://youtu.be/pN_z3yp7AV0)
+
+**[Watch on YouTube (4K Ultrawide — 3:17)](https://youtu.be/pN_z3yp7AV0)** — Covers custom 3D decks, live themes & wallpapers, instant app search, live system telemetry, and one-click Game Mode.
 
 ---
 
