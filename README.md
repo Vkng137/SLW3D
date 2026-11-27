@@ -8,6 +8,18 @@ Built with .NET 10, WinForms + WebView2, and Three.js for Windows 10 and Windows
 
 ---
 
+## Screenshots
+
+| Amber Theme | Azure Theme + Live Theme Menu |
+|---|---|
+| ![SLW3D Amber Theme](docs/screenshots/slw3d-amber.jpg) | ![SLW3D Azure Theme with Theme Menu](docs/screenshots/slw3d-azure-theme-menu.jpg) |
+
+**Magenta Theme**
+
+![SLW3D Magenta Theme](docs/screenshots/slw3d-magenta.jpg)
+
+---
+
 ## Video Walkthrough
 - **Basic Use of SLW3D** — *(YouTube link coming soon — covers every click, deck, theme, Game Mode, and tip in action)*
 
