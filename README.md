@@ -2,6 +2,9 @@
 
 **A streamlined Windows 3D overlay to customize your Windows desktop to work for you — instead of Windows telling you how it should look.**
 
+[![Download Latest Release](https://img.shields.io/badge/Download-Latest%20Installer-f59e0b?style=for-the-badge&logo=windows11&logoColor=white)](https://github.com/Vkng137/SLW3D/releases/latest)
+[![Support SLW3D on Ko-fi](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-Support%20SLW3D-72a4f2?style=for-the-badge&logo=ko-fi&logoColor=white)](https://ko-fi.com/M3H32BE3RY)
+
 > *"I built this because I got bored and tired of the old Windows desktop and having to search for things that I commonly use. I wanted a streamlined version with a little more 3D effect, customized around what the user actually uses instead of what Windows decides. I hope you enjoy it as much as I do."* — **Vkng137**
 
 Built with .NET 10, WinForms + WebView2, and Three.js for Windows 10 and Windows 11 (64-bit).
