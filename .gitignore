@@ -1,0 +1,29 @@
+# Local runtime artifacts, secrets, and vendored toolchains
+logs/
+bin/
+dist/
+**/bin/
+**/obj/
+.tools/
+gesture/.venv/
+gesture/__pycache__/
+**/__pycache__/
+*.pyc
+*.tmp
+*.bak
+*.old
+*.lnk
+
+# Contains the live local IPC token; use config/controller.example.json as the tracked template
+config/controller.json
+
+# User-imported background images (local machine media)
+assets/backgrounds/*
+!assets/backgrounds/.gitkeep
+
+# IDE / OS noise
+.vs/
+.vscode/*
+!.vscode/settings.json
+Thumbs.db
+desktop.ini

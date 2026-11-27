@@ -1,0 +1,6 @@
+{
+  "ipc_port": 47800,
+  "ipc_token": "GENERATED_ON_FIRST_RUN",
+  "game_processes": ["DCS", "EliteDangerous64", "FlightSimulator2024", "FlightSimulator", "Starfield"],
+  "game_exit_grace_s": 15
+}

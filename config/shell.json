@@ -1,0 +1,31 @@
+{
+  "clock_24h": false,
+  "decks": [
+    "Start",
+    "Games",
+    "Dev",
+    "Tools"
+  ],
+  "start_deck": "Start",
+  "core_label": "",
+  "core_brightness": 0.5,
+  "attach_layered": false,
+  "background": {
+    "image": "",
+    "dim": 0.4,
+    "fit": "fill"
+  },
+  "icon_size": "small",
+  "theme_color": {
+    "hue": 36,
+    "sat": 95
+  },
+  "saved_themes": [
+    {
+      "name": "Amber",
+      "hue": 36,
+      "sat": 95
+    }
+  ],
+  "active_theme_profile": null
+}

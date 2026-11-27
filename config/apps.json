@@ -1,0 +1,13 @@
+{
+  "apps": [
+    {"name":"Files","exe":"explorer.exe","decks":["Start"],"icon":"folder","pinned":true},
+    {"name":"Browser","uri":"https://www.bing.com","decks":["Start"],"icon":"globe","pinned":true},
+    {"name":"Settings","uri":"ms-settings:","decks":["Start"],"icon":"sliders","pinned":true},
+    {"name":"Terminal","exe":"wt.exe","decks":["Start","Dev"],"icon":"terminal","pinned":true},
+    {"name":"Notepad","exe":"notepad.exe","decks":["Start","Dev"],"icon":"code"},
+    {"name":"Calculator","uri":"calculator:","decks":["Tools"],"icon":"app"},
+    {"name":"Snipping Tool","uri":"ms-screenclip:","decks":["Tools"],"icon":"sliders"},
+    {"name":"Command Prompt","exe":"cmd.exe","decks":["Tools","Dev"],"icon":"terminal"},
+    {"name":"Windows PowerShell","uri":"shell:AppsFolder\\{1AC14E77-02E7-4E5D-B744-2EB1AE5198B7}\\WindowsPowerShell\\v1.0\\powershell.exe","decks":["Dev"],"icon":"terminal"}
+  ]
+}

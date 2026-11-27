@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https://media.desktop3d.local; connect-src 'self'">
+<title>Desktop 3D</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="bg" aria-hidden="true"></div>
+<div id="bgDim" aria-hidden="true"></div>
+<canvas id="gl" aria-hidden="true"></canvas>
+
+<div id="frame">
+  <div id="stage">
+    <div class="theme-top">
+      <div class="mono theme-hint">Click the themes down arrow to customize the desktop</div>
+      <div class="theme-wrap">
+        <button id="themeBtn" type="button" class="glass mono theme-btn" aria-haspopup="menu" aria-expanded="false" title="Change theme, icons, or background">
+          <span id="themeLabel">THEME</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg>
+        </button>
+        <div id="themeMenu" class="glass theme-menu" role="menu" aria-label="Themes" hidden></div>
+      </div>
+    </div>
+
+    <svg id="links" aria-hidden="true"><path id="linkPath"></path></svg>
+
+    <div id="core" class="core">
+      <div id="coreDisc" class="core-disc">
+        <div id="coreName" class="core-name">COMMAND</div>
+        <div id="coreState" class="mono core-state">—</div>
+      </div>
+    </div>
+
+    <div class="left-stack">
+      <section id="clockPanel" class="glass panel" aria-label="Clock and calendar">
+        <div class="panel-head mono">
+          <span id="calMonth">CALENDAR</span>
+          <span class="cal-nav">
+            <button id="calPrev" type="button" class="cal-btn" aria-label="Previous month" title="Previous month">‹</button>
+            <button id="calToday" type="button" class="cal-btn cal-today" title="Jump to today">TODAY</button>
+            <button id="calNext" type="button" class="cal-btn" aria-label="Next month" title="Next month">›</button>
+          </span>
+        </div>
+        <div class="clock-row">
+          <div class="time"><span id="time">--:--</span><span id="ampm" class="ampm"></span></div>
+          <div id="date" class="mono date"></div>
+        </div>
+        <div class="cal-dow mono" aria-hidden="true"><span>S</span><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span></div>
+        <div id="calDays" class="cal-days mono"></div>
+      </section>
+
+      <section id="decks" class="glass panel" aria-label="Decks">
+        <div class="decks-head">
+          <span class="mono head">DECKS</span>
+          <div class="decks-actions">
+            <button id="addDeckBtn" type="button" class="mono add-btn">+ DECK</button>
+            <button id="addAppBtn" type="button" class="mono add-btn">+ ADD APP</button>
+          </div>
+        </div>
+        <div id="deckRow" class="deck-row"></div>
+      </section>
+    </div>
+
+    <div class="power-dock">
+      <div class="power-wrap">
+        <button id="powerBtn" type="button" class="glass power-btn" aria-haspopup="menu" aria-expanded="false" aria-label="Windows Power" title="Power: Lock, Sleep, Restart, or Shut down Windows">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v10 M18.36 6.64a9 9 0 1 1-12.73 0"></path></svg>
+        </button>
+        <div id="powerMenu" class="glass power-menu" role="menu" aria-label="Windows power" hidden></div>
+      </div>
+    </div>
+
+    <div class="right-stack">
+      <section id="telemetry" class="glass panel" aria-label="System telemetry">
+        <div class="panel-head mono"><span>SYSTEM</span><span id="liveTag" class="accent">LIVE</span></div>
+        <div id="meters" class="meters"></div>
+        <div id="drivesWrap" class="drives-wrap" hidden>
+          <div class="mono drives-head">DRIVES · FREE</div>
+          <div id="drives" class="drives-grid"></div>
+        </div>
+      </section>
+      <div class="right-actions">
+        <button id="gameModeBtn" type="button" class="glass action-btn" title="Drop to stock Windows for gaming — tray stays ready to auto-return (Ctrl+Alt+G)">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8h12a4 4 0 0 1 4 4v2a3 3 0 0 1-5.4 1.8L15 14H9l-1.6 1.8A3 3 0 0 1 2 14v-2a4 4 0 0 1 4-4z M7 10.5v3 M5.5 12h3 M15.5 11h.01 M17.5 13h.01"></path></svg>
+          <span class="mono">GAME MODE</span>
+        </button>
+        <button id="stockWinBtn" type="button" class="glass action-btn" title="Switch temporarily to your regular Windows desktop — nothing is deleted (relaunch anytime via your shortcut)">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h8v7H3z M13 4h8v7h-8z M3 13h8v7H3z M13 13h8v7h-8z"></path></svg>
+          <span class="mono">GO TO STOCK WINDOWS</span>
+        </button>
+      </div>
+    </div>
+
+    <div id="nodes"></div>
+
+    <div id="tileMenu" class="glass tile-menu" role="menu" hidden></div>
+
+    <div id="addScrim" class="scrim" hidden></div>
+    <div id="addModal" class="glass modal" role="dialog" aria-modal="true" aria-labelledby="addTitle" hidden>
+      <div class="modal-head">
+        <h2 id="addTitle">Add an app</h2>
+        <button id="addClose" type="button" class="icon-btn" aria-label="Close">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12 M18 6L6 18"></path></svg>
+        </button>
+      </div>
+      <label class="field">
+        <span class="mono field-label">SEARCH YOUR APPS</span>
+        <input id="addSearch" type="search" placeholder="Type part of a name…" autocomplete="off" spellcheck="false">
+      </label>
+      <div id="addList" class="app-list" role="listbox" aria-label="Your apps"></div>
+      <div id="addOptions" class="add-options dim">
+        <label class="field">
+          <span class="mono field-label">TILE NAME</span>
+          <input id="addName" type="text" maxlength="40" autocomplete="off" spellcheck="false">
+        </label>
+        <div class="field">
+          <span class="mono field-label">SHOW ON</span>
+          <div id="addDecks" class="chip-row"></div>
+        </div>
+        <div class="field wide">
+          <span class="mono field-label">ICON</span>
+          <div id="addIcons" class="icon-row" role="radiogroup" aria-label="Icon"></div>
+        </div>
+        <label class="check wide"><input id="addPin" type="checkbox"><span>Also pin it to the dock</span></label>
+      </div>
+      <div class="modal-foot">
+        <span class="spacer"></span>
+        <button id="addCancel" type="button" class="btn">Cancel</button>
+        <button id="addConfirm" type="button" class="btn primary" disabled>Add to desktop</button>
+      </div>
+    </div>
+
+    <div id="deckScrim" class="scrim" hidden></div>
+    <div id="deckModal" class="glass modal deck-modal" role="dialog" aria-modal="true" aria-labelledby="deckTitle" hidden>
+      <div class="modal-head">
+        <h2 id="deckTitle">Add a deck</h2>
+        <button id="deckClose" type="button" class="icon-btn" aria-label="Close">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12 M18 6L6 18"></path></svg>
+        </button>
+      </div>
+      <label class="field">
+        <span class="mono field-label">DECK NAME</span>
+        <input id="deckName" type="text" maxlength="16" placeholder="e.g. Media, VR, Work…" autocomplete="off" spellcheck="false">
+      </label>
+      <div class="modal-foot">
+        <span id="deckHint" class="mono field-label"></span>
+        <span class="spacer"></span>
+        <button id="deckCancel" type="button" class="btn">Cancel</button>
+        <button id="deckConfirm" type="button" class="btn primary" disabled>Add deck</button>
+      </div>
+    </div>
+
+    <div id="saveThemeScrim" class="scrim" hidden></div>
+    <div id="saveThemeModal" class="glass modal deck-modal" role="dialog" aria-modal="true" aria-labelledby="saveThemeTitle" hidden>
+      <div class="modal-head">
+        <h2 id="saveThemeTitle">Save theme</h2>
+        <button id="saveThemeClose" type="button" class="icon-btn" aria-label="Close">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12 M18 6L6 18"></path></svg>
+        </button>
+      </div>
+      <label class="field">
+        <span class="mono field-label">THEME NAME</span>
+        <input id="saveThemeName" type="text" maxlength="24" placeholder="e.g. Cockpit Amber, Cyber Cyan…" autocomplete="off" spellcheck="false">
+      </label>
+      <div class="modal-foot">
+        <span id="saveThemePreview" class="color-meta mono field-label"><span id="saveThemeChip" class="color-chip"></span><span id="saveThemeDesc"></span></span>
+        <span class="spacer"></span>
+        <button id="saveThemeCancel" type="button" class="btn">Cancel</button>
+        <button id="saveThemeConfirm" type="button" class="btn primary" disabled>Save theme</button>
+      </div>
+    </div>
+
+    <nav id="dock" class="glass" aria-label="Dock">
+      <div id="pins" class="pins"></div>
+      <span class="sep"></span>
+      <span id="dockTime" class="mono dock-time"></span>
+    </nav>
+
+    <div id="toast" class="glass toast" role="status" aria-live="polite"></div>
+  </div>
+</div>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>

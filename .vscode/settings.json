@@ -1,0 +1,4 @@
+{
+  "dotnet.defaultSolution": "Desktop3D.sln",
+  "dotnet.server.useOmnisharp": false
+}

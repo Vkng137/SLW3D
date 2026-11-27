@@ -1,0 +1,25 @@
+{
+  "active": "default",
+  "previous": "",
+  "themes": {
+    "default": {
+      "label": "Default",
+      "bg_gradient": [
+        "#2B2D32",
+        "#131416",
+        "#030304"
+      ],
+      "bg_glow": "rgba(210,218,230,0.10)",
+      "text": "#F2F4F7",
+      "muted": "#959BA5",
+      "accent": "#D9DEE6",
+      "accent_soft": "rgba(217,222,230,0.12)",
+      "glass_fill": "rgba(255,255,255,0.06)",
+      "glass_fill_strong": "rgba(255,255,255,0.12)",
+      "glass_border": "rgba(255,255,255,0.18)",
+      "glow": "0 0 22px rgba(220,228,240,0.30)",
+      "orb_core": "#FFFFFF",
+      "windows_accent": "#6B7280"
+    }
+  }
+}
