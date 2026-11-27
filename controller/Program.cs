@@ -9,7 +9,7 @@ static class Program
         try { root = Paths.FindRoot(); }
         catch (Exception ex)
         {
-            MessageBox.Show(ex.Message, "Windows 3D Desktop", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MessageBox.Show(ex.Message, "SLW3D", MessageBoxButtons.OK, MessageBoxIcon.Error);
             return;
         }
 
@@ -23,8 +23,8 @@ static class Program
             {
                 Log.Write($"Another controller is already running from '{otherDir}'; refusing to cross-wake from '{root}'.");
                 MessageBox.Show(
-                    $"Windows 3D Desktop is already running from:\n{otherDir}\n\nRight-click its system tray icon and choose \"Exit (back to stock Windows)\" first before launching this copy from:\n{root}",
-                    "Windows 3D Desktop — Another Copy Is Running",
+                    $"SLW3D is already running from:\n{otherDir}\n\nRight-click its system tray icon and choose \"Exit (back to stock Windows)\" first before launching this copy from:\n{root}",
+                    "SLW3D — Another Copy Is Running",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
                 return;

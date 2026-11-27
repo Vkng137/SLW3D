@@ -13,4 +13,4 @@ A lightweight, customizable 3D glass desktop overlay for Windows 10/11 built wit
 ```powershell
 .\build.ps1
 ```
-Then launch `Start Windows 3D Desktop.lnk` or `bin\controller\Desktop3D.Controller.exe`.
+Then launch `bin\controller\Desktop3D.Controller.exe`.

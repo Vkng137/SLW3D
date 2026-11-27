@@ -82,7 +82,7 @@ Built with .NET 10, WinForms + WebView2, and Three.js for Windows 10 and Windows
   - **Windows 11:** Right-click the taskbar → **Taskbar settings** → **Taskbar behaviors** → check **Automatically hide the taskbar**.
   - **Windows 10:** Right-click the taskbar → **Taskbar settings** → turn on **Automatically hide the taskbar in desktop mode**.
   *(You can still access Start and Search anytime from the bottom dock bar or by moving your mouse to the bottom edge.)*
-- **Start at Login:** Right-click the **Windows 3D Desktop** icon in the Windows system tray (bottom-right notification area) and enable **Start at login** if you want it to launch automatically when you sign in.
+- **Start at Login:** Right-click the **SLW3D** icon in the Windows system tray (bottom-right notification area) and enable **Start at login** if you want it to launch automatically when you sign in.
 
 ---
 
@@ -110,7 +110,7 @@ SLW3D gives you two ways to launch games depending on how demanding the game is:
 ---
 
 ## Uninstalling
-Open **Windows Settings → Apps → Installed apps**, find **Streamlined Desktop Overlay for Windows (SLW3D)**, and click **Uninstall** (or use the Start Menu uninstall shortcut). Uninstalling removes the application files and cleans up the optional `Windows 3D Desktop` login task.
+Open **Windows Settings → Apps → Installed apps**, find **Streamlined Desktop Overlay for Windows (SLW3D)**, and click **Uninstall** (or use the Start Menu uninstall shortcut). Uninstalling removes the application files and cleans up the optional `SLW3D` login task.
 
 ---
 

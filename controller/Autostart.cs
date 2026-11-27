@@ -10,7 +10,7 @@ namespace Desktop3D.Controller;
 /// the Task Scheduler default (below normal) would be inherited by games launched from the tiles.</summary>
 static class Autostart
 {
-    public const string TaskName = "Windows 3D Desktop";
+    public const string TaskName = "SLW3D";
 
     public static bool IsOn() => Run("/Query /TN \"" + TaskName + "\"", out _) == 0;
 
@@ -20,7 +20,7 @@ static class Autostart
         string xml = $"""
             <?xml version="1.0" encoding="UTF-16"?>
             <Task version="1.2" xmlns="http://schemas.microsoft.com/windows/2004/02/mit/task">
-              <RegistrationInfo><Description>Starts the Windows 3D Desktop controller at login (project: {SecurityElement.Escape(Path.GetDirectoryName(Path.GetDirectoryName(Path.GetDirectoryName(controllerExe))))}).</Description></RegistrationInfo>
+              <RegistrationInfo><Description>Starts the SLW3D controller at login (project: {SecurityElement.Escape(Path.GetDirectoryName(Path.GetDirectoryName(Path.GetDirectoryName(controllerExe))))}).</Description></RegistrationInfo>
               <Triggers><LogonTrigger><Enabled>true</Enabled><UserId>{SecurityElement.Escape(user)}</UserId><Delay>PT10S</Delay></LogonTrigger></Triggers>
               <Principals><Principal id="Author"><UserId>{SecurityElement.Escape(user)}</UserId><LogonType>InteractiveToken</LogonType><RunLevel>LeastPrivilege</RunLevel></Principal></Principals>
               <Settings>

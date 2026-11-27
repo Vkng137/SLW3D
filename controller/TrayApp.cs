@@ -50,8 +50,8 @@ sealed class TrayApp : ApplicationContext
 
         tray = new NotifyIcon
         {
-            Icon = MakeIcon(),
-            Text = "Windows 3D Desktop",
+            Icon = MakeIcon(root),
+            Text = "SLW3D",
             Visible = true,
             ContextMenuStrip = menu,
         };
@@ -145,7 +145,7 @@ sealed class TrayApp : ApplicationContext
         miFull.Checked = modes.Current == Mode.Full;
         miManual.Checked = modes.Current == Mode.ManualControl;
         miGame.Checked = modes.Current == Mode.GameMode;
-        tray.Text = "Windows 3D Desktop: " + modes.Current switch
+        tray.Text = "SLW3D: " + modes.Current switch
         {
             Mode.Full => "Full",
             Mode.ManualControl => "Manual Control",
@@ -238,8 +238,16 @@ sealed class TrayApp : ApplicationContext
         ExitThread();
     }
 
-    static Icon MakeIcon()
+    static Icon MakeIcon(string root)
     {
+        try
+        {
+            string icoPath = Path.Combine(root, "assets", "desktop3d.ico");
+            if (File.Exists(icoPath))
+                return new Icon(icoPath, 32, 32);
+        }
+        catch { }
+
         using var bmp = new Bitmap(32, 32);
         using (var g = Graphics.FromImage(bmp))
         {

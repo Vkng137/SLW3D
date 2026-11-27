@@ -53,7 +53,7 @@ Name: "{autodesktop}\SLW3D"; Filename: "{app}\bin\controller\Desktop3D.Controlle
 Filename: "{app}\bin\controller\Desktop3D.Controller.exe"; WorkingDir: "{app}\bin\controller"; Description: "{cm:LaunchProgram,SLW3D}"; Flags: nowait postinstall skipifsilent
 
 [UninstallRun]
-Filename: "schtasks.exe"; Parameters: "/Delete /TN ""Windows 3D Desktop"" /F"; Flags: runhidden; RunOnceId: "DelAutostartTask"
+Filename: "schtasks.exe"; Parameters: "/Delete /TN ""SLW3D"" /F"; Flags: runhidden; RunOnceId: "DelAutostartTask"
 
 [Code]
 const
