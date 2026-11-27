@@ -77,6 +77,12 @@ Built with .NET 10, WinForms + WebView2, and Three.js for Windows 10 and Windows
 
 ## Installation Guide (Windows 10/11 x64)
 
+> [!NOTE]
+> **Code Signing Status (In Progress):** Open-source code signing (applied via **SignPath Foundation**) is currently in progress. Until signing is active, Windows Defender SmartScreen shows an **"Unknown publisher"** prompt on downloaded `.exe` installers — this is standard for unsigned open-source builds and is **not** a virus detection.
+>
+> - **100% open-source & verifiable:** Every line of source code is public right here in this repo, and each release installer is built directly from this code by GitHub Actions (`.github/workflows/release.yml`). If you prefer, you can also build straight from source with `.\build.ps1`.
+> - **Scan & verify first:** Always scan the download with Windows Defender or [VirusTotal](https://www.virustotal.com/) and verify the SHA-256 hash against `SHA256SUMS.txt` before running.
+
 ### 1. Download, Virus-Scan & Verify Checksum
 1. Go to the [Releases](../../releases) page and download both:
    - `SLW3D-Setup-<version>-win-x64.exe`
@@ -89,8 +95,13 @@ Built with .NET 10, WinForms + WebView2, and Three.js for Windows 10 and Windows
    Confirm the output hash matches the hash in `SHA256SUMS.txt` (or run `sha256sum -c SHA256SUMS.txt` in Git Bash/Linux).
 
 ### 2. Run the Installer
-1. Double-click `SLW3D-Setup-<version>-win-x64.exe`.
-2. **Windows SmartScreen note:** Because open-source builds without a paid code-signing certificate do not have an established publisher signature yet, Windows may display *"Windows protected your PC"*. After scanning the file and verifying the SHA-256 checksum against `SHA256SUMS.txt` (built directly by GitHub Actions from this repository), click **More info → Run anyway** if you choose to proceed.
+1. Double-click `SLW3D-Setup-<version>-win-x64.exe` *(or, after scanning, right-click the `.exe` → **Properties** → check **Unblock** → **OK** to clear the browser download flag)*.
+2. **Windows SmartScreen note:** If Windows displays *"Windows protected your PC"*:
+   - Click **More info**.
+   - On high-DPI/scaled screens, Windows sometimes places **Run anyway** off to the right — **scroll the bottom bar right** (or maximize/resize) if you don't see it right away, then click **Run anyway**.
+
+   ![Windows SmartScreen steps: Click More info, scroll right if needed, then click Run anyway](docs/screenshots/smartscreen-guide.jpg)
+
 3. The installer installs per-user into `%LocalAppData%\Programs\SLW3D` (no Administrator prompt needed) and bundles the .NET 10 runtime.
 
 ### 3. Recommended First-Time Setup
