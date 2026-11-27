@@ -11,6 +11,15 @@ Built with .NET 10, WinForms + WebView2, and Three.js for Windows 10 and Windows
 
 ---
 
+## Highlights
+- **Completely Customizable (Top-Left `THEME` Menu):** Tune 360° theme colors, intensity, saved color profiles, and custom desktop backgrounds (with Dim & Fit controls) live from the **THEME** dropdown in the top-left corner.
+- **Adjustable Icon Sizing:** Switch between **Small**, **Medium**, and **Large** icons to fit any screen size or ultrawide desktop.
+- **Low Resource Usage:** Lightweight for normal everyday use (~377 MB RAM total, ~0.0%–0.5% idle CPU, and ~0% GPU when covered by a maximized window).
+- **One-Click Game Mode (`Ctrl+Alt+G`):** Shuts down the 3D shell completely (0% GPU overhead) so you can launch demanding games from the Windows Start Menu, then brings SLW3D back when you're done.
+- **Clean Full Exit to Stock Windows:** Exit anytime from the system tray (or press `Ctrl+Alt+Shift+D`) to shut SLW3D down completely (0 MB RAM) and drop all the way back to your untouched Windows desktop.
+
+---
+
 ## Screenshots
 
 | Amber Theme | Azure Theme + Live Theme Menu |
@@ -38,7 +47,7 @@ Built with .NET 10, WinForms + WebView2, and Three.js for Windows 10 and Windows
 ## Key Features
 - **Non-destructive desktop layer**: Attaches cleanly to Explorer's desktop layer (below all app windows, above desktop icons — never alters or hides your Windows desktop icons). Step back to stock Windows or Game Mode in one click.
 - **3D Glass UI**: Interactive Three.js orbital centerpiece, floating app arc, up to **8 customizable decks** × **18 icons per deck** (staggered dual rings past 10 icons), plus a bottom search/dock bar for pinned apps.
-- **Live Customization**: Top-right **THEME** menu with 360° Theme Color slider, Intensity, quick swatches, **Saved Themes** profiles, icon sizing (`Small · Medium · Large`), and wallpaper picker with Dim & Fit modes.
+- **Live Customization**: Top-left **THEME** menu with 360° Theme Color slider, Intensity, quick swatches, **Saved Themes** profiles, icon sizing (`Small · Medium · Large`), and wallpaper picker with Dim & Fit modes.
 - **System & Power**: Live Clock & Calendar panel, System telemetry panel, one-click **Game Mode** (plus automatic Game Mode watcher), and bottom-left Power menu (Lock, Sleep, Restart, Shut Down with 2-click confirmation).
 - **Global Hotkeys**:
   - `Ctrl+Alt+I` — Full 3D desktop
@@ -107,7 +116,7 @@ SLW3D gives you two ways to launch games depending on how demanding the game is:
 
 ## Customizing Your Desktop
 - **Decks & Apps:** Opens on the **Start** deck with built-in Windows apps ready to go. Use `+ DECK` to create up to 8 custom decks and `+ ADD APP` to pick apps from your Windows Start Menu or add custom shortcuts. Right-click any tile to remove it from a deck, or right-click a dock icon to unpin it.
-- **Themes & Colors:** Click the **THEME** dropdown at the top right to adjust the 360° hue slider, intensity, quick swatches, **Saved Themes** profiles, icon size (`Small · Medium · Large`), and custom wallpapers (Dim & Fit modes).
+- **Themes & Colors:** Click the **THEME** dropdown in the top-left corner to adjust the 360° hue slider, intensity, quick swatches, **Saved Themes** profiles, icon size (`Small · Medium · Large`), and custom wallpapers (Dim & Fit modes).
 - **Tray Menu Controls:** Right-click the system tray icon at any time to switch modes (`Full 3D desktop`, `Manual control`, `Game mode`), trigger **Panic restore**, toggle **Start at login**, view logs, or **Exit (back to stock Windows)**.
 
 ---
